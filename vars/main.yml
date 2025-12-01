@@ -15,24 +15,11 @@ fail2ban_base_configuration:
     section: Definition
 
 fail2ban_base_jail_configuration:
-  - option: ignoreself
-    value: "{{ fail2ban_ignoreself }}"
-    section: DEFAULT
-  - option: ignoreip
-    value: "{{ fail2ban_ignoreips | join(' ') }}"
-    section: DEFAULT
-  - option: bantime
-    value: "{{ fail2ban_bantime }}"
-    section: DEFAULT
-  - option: findtime
-    value: "{{ fail2ban_findtime }}"
-    section: DEFAULT
-  - option: maxretry
-    value: "{{ fail2ban_maxretry }}"
-    section: DEFAULT
-  - option: destemail
-    value: "{{ fail2ban_destemail }}"
-    section: DEFAULT
-  - option: sender
-    value: "{{ fail2ban_sender }}"
-    section: DEFAULT
+  - name: DEFAULT
+    ignoreself: "{{ fail2ban_ignoreself }}"
+    ignoreip: "{{ fail2ban_ignoreips | join(' ') }}"
+    bantime: "{{ fail2ban_bantime }}"
+    findtime: "{{ fail2ban_findtime }}"
+    maxretry: "{{ fail2ban_maxretry }}"
+    destemail: "{{ fail2ban_destemail }}"
+    sender: "{{ fail2ban_sender }}"
